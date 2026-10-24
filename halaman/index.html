@@ -1,85 +1,61 @@
-```html
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<section id="produk">
+    <h2>Daftar Alat-Alat Elektronik</h2>
 
-    <title>Elektronik Store | Alat-Alat Elektronik</title>
+    <input
+        type="text"
+        id="pencarian"
+        placeholder="Cari laptop, handphone, mouse..."
+    >
 
-    <meta name="description" content="Website informasi dan katalog alat-alat elektronik modern. Temukan laptop, smartphone, televisi, kamera, dan perangkat elektronik lainnya.">
+    <div class="kategori-menu">
+        <button onclick="filterKategori('Semua')">
+            Semua
+        </button>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+        <button onclick="filterKategori('Komputer')">
+            Komputer
+        </button>
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #080d18;
-            color: #ffffff;
-            line-height: 1.6;
-        }
+        <button onclick="filterKategori('Handphone')">
+            Handphone
+        </button>
 
-        header {
-            background: #101a2d;
-            padding: 18px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            border-bottom: 1px solid #263957;
-        }
+        <button onclick="filterKategori('Aksesoris')">
+            Aksesoris
+        </button>
 
-        .logo {
-            font-size: 25px;
-            font-weight: bold;
-            color: #42baff;
-        }
+        <button onclick="filterKategori('Audio')">
+            Audio
+        </button>
 
-        nav {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
+        <button onclick="filterKategori('Kamera')">
+            Kamera
+        </button>
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 14px;
-        }
+        <button onclick="filterKategori('Elektronik Rumah')">
+            Elektronik Rumah
+        </button>
+    </div>
 
-        nav a:hover {
-            color: #42baff;
-        }
+    <div id="daftar-produk" class="daftar-produk"></div>
+</section>
 
-        .hero {
-            min-height: 440px;
-            padding: 80px 8%;
-            display: flex;
-            align-items: center;
-            background:
-                radial-gradient(circle at 80% 30%, #183b68, transparent 35%),
-                linear-gradient(135deg, #080d18, #12223c);
-        }
+<section id="keranjang">
+    <h2>Keranjang Belanja</h2>
 
-        .hero-content {
-            max-width: 700px;
-        }
+    <p>
+        Jumlah barang:
+        <span id="jumlah-keranjang">0</span>
+    </p>
 
-        .badge {
-            display: inline-block;
-            background: #163b59;
-            color: #72d2ff;
-            padding: 7px 15px;
-            border-radius: 20px;
-            margin-bottom: 20px;
-            font-size: 13px;
-        }
+    <p>
+        Total harga:
+        <span id="total-harga">Rp0</span>
+    </p>
 
-        .hero h1 {
-            font-size: clamp(34px, 5vw, 58px
+    <div id="isi-keranjang"></div>
+
+    <button onclick="kosongkanKeranjang()">
+        Kosongkan Keranjang
+    </button>
+</section>
